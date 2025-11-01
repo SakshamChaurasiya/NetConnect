@@ -12,11 +12,20 @@ dbConnect();
 
 const app = express();
 
-app.use(cors({
-    origin: process.env.CLIENT_URL,
-    credentials: true,
-}));
+const allowedOrigin = (process.env.CLIENT_URL || "").replace(/\/$/, ""); // remove trailing slash if exists
 
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || origin === allowedOrigin) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 
