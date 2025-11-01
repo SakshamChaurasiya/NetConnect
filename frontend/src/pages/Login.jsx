@@ -73,7 +73,7 @@ const Login = ({ onSwitchToRegister }) => {
 
       {/* Footer */}
       <p className="text-gray-700 text-sm mt-6">
-        New to LinkedIn?{" "}
+        New to NetConnect?{" "}
         <button
           onClick={onSwitchToRegister}
           className="text-[#0A66C2] font-medium hover:underline"

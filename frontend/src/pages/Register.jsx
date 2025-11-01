@@ -80,7 +80,7 @@ const Register = ({ onSwitchToLogin }) => {
 
       {/* Footer */}
       <p className="text-gray-700 text-sm mt-6">
-        Already on LinkedIn?{" "}
+        Already on NetConnect?{" "}
         <button
           onClick={onSwitchToLogin}
           className="text-[#0A66C2] font-medium hover:underline"
